@@ -1,0 +1,34 @@
+<%= javascript_include_tag 'awesome_selector/jquery', 'awesome_selector/jquery.jfilter', 'awesome_selector/jquery.autocomplete', 'awesome_selector/awesome_selector' %>
+<%= stylesheet_link_tag 'awesome_selector/awesome_selector', 'awesome_selector/selector_template_1', 'awesome_selector/selector_template_2'%>
+
+<div id="awesome_selector" class="awesome_selector_<%=  template %>">
+  <div id="selectable_error_msg" class="error"></div>
+  <div class="clear"></div>
+  <div id="filter_div">
+    <%=  "Filter your result: " %>
+    <input type = "text" id = "awesome_selector_list_filter" autocomplete_array = '<%=  auto_complete.to_json %>'>
+    <a href="javascript: void(0);" id="filter_clear_btn" style="display:none;"></a>
+  </div>
+  <div id="header">
+    <p class="title left"><%=  "Select" %></p>
+    <div class="right">
+      <p class="left bold" id ="show_all" > <%=  "All" %> </p>
+      <p class="left" id = 'show_selection'> <%=  "Selected" %> </p>
+      <p id="selection_cnt" class="left">
+        <script type="text/javascript">
+          jQuery(document).ready(function(){
+          jQuery('#selection_cnt').html("(" + selection_cnt + ")");
+          });
+        </script>
+      </p>
+    </div>
+  </div>
+    <div class="clear"></div>
+    <div id="awesome_selector_main">
+      <% form_tag({:url => form_post_url}, {:id =>"awesome_selector_form"}) do %>
+        <%=  render :partial => "/selectable/selectable_form", :locals =>{:template => template, :result_set => objects, :image_url => image_url, :field_names => field_names, :selection_limit => max_selection_limit} %>
+        <%=  hidden_field_tag 'selected_element_ids' %>
+        <%=  submit_tag "Submit" %>
+      <% end %>
+      </div>
+</div>

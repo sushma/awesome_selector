@@ -1,0 +1,68 @@
+AwesomeSelector
+===============
+
+Fancy item selector (like facebook friends selector) with easily configurable options.
+A helper to provide awesome user interface to select multiple items.
+
+
+== Setup ==
+
+script/plugin install git@github.com:sushma/awesome_selector.git
+
+rake awesome_selector:setup
+
+
+== Parameters ==
+
+awesome selector can be easily configured by passing parameters.
+
+Mandatory parameters
+----------------------
+
+:objects                   ->  Accepts an array of objects to be displayed for selection.
+:field_names               ->  Accepts an array of field names to be displayed.
+:form_post_url             ->  Url to post the form after selection.
+
+
+Optional parameters
+----------------------
+
+:template                  ->  Name of template to be used. Default is 'template_1'.(template name is case sensitive)
+                               Example of available templates are available at 'examples/example.html' of the 'plugins/awesome_selector' folder.
+:auto_complete_field_name  ->  Accepts single field name as string argument for autocomplete text box.
+:image_url                 ->  Accepts an instance method to display image for each object of the array.
+:max_selection_limit       ->  Accepts an array of 'an integer value as maximum selection limit' and a 'string as error message' to be displayed if selection exceeds the limit.
+
+== Example ==
+
+<%=  awesome_selector  :objects => @users,
+                       :field_names => ["name","email"],
+                       :form_post_url => users_path
+                       :template => "template_1",
+                       :auto_complete_field_name => "name",
+                       :image_url => "avatar_photo_url(:thumb)",
+                       :max_selection_limit => [5, 'Sorry, you can not select more users.']
+ %>
+
+When this form is submitted, the selected objects id are available as params[:selected_element_ids] joined by comma.
+
+
+Create new template
+-----------------------
+A new template can be easily created by the following the steps below:
+
+Steps to create 'template_3'
+
+1. Create new 'selector_template_3.css' file in public/awesome_selector folder.
+2. Copy content of 'selector_template_1.css' to 'selector_template_3.css
+3. Replace all the class name 'awesome_selector_template_1' with 'awesome_selector_template_3'
+4. Load the css as: <%= stylesheet_link_tag 'awesome_selector/selector_template_3.css' %>
+5. Change the css as per your requirement for the new template.
+
+
+== Support ==
+
+If you need help or would just like to send feedback, just send an email to
+'contact.sushmapandey@gmail.com'
+
+Copyright (c) 2010 Sushma Pandey, released under the MIT license

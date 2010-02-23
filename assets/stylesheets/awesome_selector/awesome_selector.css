@@ -1,0 +1,46 @@
+@import "style.css";
+* {
+margin:0;
+padding:0;
+}
+.autocomplete-w1 {
+background:#F6F6F6 none no-repeat scroll right bottom;
+left:0;
+margin:8px 0 0 6px;
+}
+.autocomplete {
+background:#FFFFFF none repeat scroll 0 0;
+border:1px solid #999999;
+cursor:default;
+margin:-6px;
+max-height:350px;
+overflow:auto;
+text-align:left;
+}
+.autocomplete .selected {
+background:#F0F0F0 none repeat scroll 0 0;
+}
+.autocomplete div {
+padding:2px 5px;
+white-space:nowrap;
+}
+.autocomplete strong {
+color:#3399FF;
+font-weight:normal;
+}
+#awesome_selector #filter_div {
+margin:10px 0 0;
+font-size:12px;
+}
+#awesome_selector #filter_div #filter_clear_btn {
+background:transparent url(/images/awesome_selector/clear.gif) no-repeat scroll left top;
+display:block;
+float:left;
+height:14px;
+margin:-17px 0 0 280px;
+width:13px;
+position: relative;
+}
+#awesome_selector #filter_div #filter_clear_btn:hover {
+background:transparent url(/images/awesome_selector/clear_blue.gif) no-repeat scroll left top;
+}
