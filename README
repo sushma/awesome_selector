@@ -1,8 +1,7 @@
 AwesomeSelector
 ===============
 
-Fancy item selector (like facebook friends selector) with easily configurable options.
-A helper to provide awesome user interface to select multiple items.
+Fancy user interface for multiple item selection (like facebook friends selector) with easily configurable options. 
 
 
 == Setup ==
@@ -14,7 +13,7 @@ rake awesome_selector:setup
 
 == Parameters ==
 
-awesome selector can be easily configured by passing parameters.
+awesome selector can be easily configured by passing parameters to 'awesome_selector' helper.
 
 Mandatory parameters
 ----------------------
