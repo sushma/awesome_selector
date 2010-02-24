@@ -6,7 +6,7 @@ Fancy user interface for multiple item selection (like facebook friends selector
 
 == Setup ==
 
-script/plugin install git@github.com:sushma/awesome_selector.git
+script/plugin install git://github.com/sushma/awesome_selector.git
 
 rake awesome_selector:setup
 
