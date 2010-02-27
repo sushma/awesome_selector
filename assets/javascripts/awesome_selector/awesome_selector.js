@@ -117,7 +117,7 @@ function highlight_selected_div(element_id, max_selection_limit)
     selection_cnt -= 1;
     jQuery('#selection_cnt').html("(" + selection_cnt + ")");
     element.removeClass('selected');
-    if(list_wrapper.hasClass('selected_elements_list'))
+    if(jQuery('ul#selection_list_wrapper').hasClass('selected_elements_list'))
     {
       element.hide();
     }
