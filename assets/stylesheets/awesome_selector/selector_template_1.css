@@ -3,7 +3,7 @@
 color:#FF0000;
 font-weight:bold;
 }
-.awesome_selector_template_1 .error {
+.awesome_selector_template_1 #selectable_error_msg {
 color:red;
 }
 .awesome_selector_template_1 #header {
