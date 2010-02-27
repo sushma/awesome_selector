@@ -20,7 +20,11 @@
       <p id="details">
         <% unless fields.blank? %>
           <%  for field in fields %>
-            <%=  truncate(eval("record.#{field}"), :length => 18) %>
+            <% if eval("record.#{field}").is_a?(String) %>
+              <%=  truncate(eval("record.#{field}"), :length => 18) %>
+            <% else %>
+              <%=  eval("record.#{field}") %>
+            <% end %> 
             <br />
           <% end %>
         <% end %>
