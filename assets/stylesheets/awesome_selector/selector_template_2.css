@@ -118,9 +118,17 @@ margin:5px;
 padding:5px;
 width:163px;
 }
-.awesome_selector_template_2 input {
+.awesome_selector_template_2 input[type='text'] {
 color:#7F7F7F;
 font-size:12px;
 border:1px solid #D5D5D5;
 padding:1px;
+width: 177px;
 }
+
+.awesome_selector_template_2 input[type='submit'] {
+color:#7F7F7F;
+font-size:12px;
+border:1px solid #D5D5D5;
+padding:1px;
+}
