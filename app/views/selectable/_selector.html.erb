@@ -1,29 +1,29 @@
 <%= javascript_include_tag 'awesome_selector/jquery', 'awesome_selector/jquery.jfilter', 'awesome_selector/jquery.autocomplete', 'awesome_selector/awesome_selector' %>
 <%= stylesheet_link_tag 'awesome_selector/awesome_selector', 'awesome_selector/selector_template_1', 'awesome_selector/selector_template_2'%>
 
-<div id="awesome_selector" class="awesome_selector_<%=  template %>">
-  <div id="selectable_error_msg"></div>
+<div id="as_awesome_selector" class="as_awesome_selector_<%=  template %>">
+  <div id="as_selectable_error_msg"></div>
   <div class="clear"></div>
-  <div id="filter_div">
+  <div id="as_filter_div">
     <%=  "Filter result: " %>
-    <input type = "text" id = "awesome_selector_list_filter" autocomplete_array = '<%=  auto_complete.to_json %>'>
-    <a href="javascript: void(0);" id="filter_clear_btn" style="display:none;"></a>
+    <input type = "text" id = "as_awesome_selector_list_filter" autocomplete_array = '<%=  auto_complete.to_json %>'>
+    <a href="javascript: void(0);" id="as_filter_clear_btn" style="display:none;"></a>
   </div>
-  <div id="header">
-    <p class="title left"><%=  "Select" %></p>
-    <div class="right">
-      <p class="left bold" id ="show_all" > <%=  "All" %> </p>
-      <p class="left" id = 'show_selection'> <%=  "Selected" %> </p>
-      <p id="selection_cnt" class="left">
+  <div id="as_header">
+    <p class="as_title as_left"><%=  "Select" %></p>
+    <div class="as_right">
+      <p class="as_left as_bold" id ="as_show_all" > <%=  "All" %> </p>
+      <p class="as_left" id = 'as_show_selection'> <%=  "Selected" %> </p>
+      <p id="as_selection_cnt" class="as_left">
         <script type="text/javascript">
-          jQuery('#selection_cnt').html("(" + selection_cnt + ")");
+          jQuery('#as_selection_cnt').html("(" + as_selection_cnt + ")");
         </script>
       </p>
     </div>
   </div>
     <div class="clear"></div>
-    <div id="awesome_selector_main">
-      <% form_tag({:url => form_post_url}, {:id =>"awesome_selector_form"}) do %>
+    <div id="as_awesome_selector_main">
+      <% form_tag({:url => form_post_url}, {:id =>"as_awesome_selector_form"}) do %>
         <%=  render :partial => "/selectable/selectable_form", :locals =>{:template => template, :result_set => objects, :image_url => image_url, :field_names => field_names, :selection_limit => max_selection_limit} %>
         <%=  hidden_field_tag 'selected_element_ids' %>
         <%=  submit_tag "Submit" %>
@@ -33,12 +33,12 @@
 
 <!--Script to highlight selected list elements on load-->
 <script type="text/javascript">
-selection_cnt = "<%= selected_objects.length %>"
-if(selection_cnt > 0)
+as_selection_cnt = "<%= selected_objects.length %>"
+if(as_selection_cnt > 0)
 {
  <% for obj in selected_objects %>
-   jQuery("#selectable_element_div_" + <%= obj %>).addClass('selected');
+   jQuery("#as_selectable_element_div_" + <%= obj %>).addClass('as_selected');
  <% end %>
- jQuery('#selection_cnt').html("(" + selection_cnt + ")");
+ jQuery('#as_selection_cnt').html("(" + as_selection_cnt + ")");
 }
 </script>

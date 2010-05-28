@@ -37,7 +37,7 @@ jQuery.fn.jfilter = function(o) {
 
   return this.each(function(){
     jQuery(this).keyup(function(){
-      var li = jQuery(o.list).hasClass('selected_elements_list')? 'li.selected' : 'li'
+      var li = jQuery(o.list).hasClass('as_selected_elements_list')? 'li.as_selected' : 'li'
       var str = jQuery(this).val().replace( /<|>/, "" );
       jQuery(this).val(str);
       (str != '') ? jQuery(o.clear_btn).show() : jQuery(o.clear_btn).hide();

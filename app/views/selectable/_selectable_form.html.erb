@@ -1,4 +1,4 @@
-<ul id="selection_list_wrapper" class="selectable_list_bg">
+<ul id="as_selection_list_wrapper" class="as_selectable_list_bg">
   <% result_set.each do |record| %>
     <% fields = [] %>
     <% for field_name in field_names %>
@@ -12,12 +12,12 @@
         </script>
       <% end %>
     <% end %>
-    <li class="selectable_element_details" id="selectable_element_div_<%= record.id %>" record_id='<%= record.id %>' selection_limit='<%=  selection_limit.to_json %>'>
+    <li class="as_selectable_element_details" id="as_selectable_element_div_<%= record.id %>" record_id='<%= record.id %>' selection_limit='<%=  selection_limit.to_json %>'>
       <%  unless image_url.blank? %>
         <%  url = eval("record.#{image_url}") %>
         <img src="<%= url %>" />
       <% end %>
-      <p id="details">
+      <p id="as_details">
         <% unless fields.blank? %>
           <%  for field in fields %>
             <% if eval("record.#{field}").is_a?(String) %>
@@ -30,6 +30,5 @@
         <% end %>
       </p>
     </li>
-    <div class="clear"></div>
   <% end %>
 </ul>

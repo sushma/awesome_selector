@@ -1,11 +1,11 @@
-.awesome_selector_template_2 #selection_list_wrapper .highlight{
+.as_awesome_selector_template_2 #as_selection_list_wrapper .highlight{
 color:#FF0000;
 font-weight:bold;
 }
-.awesome_selector_template_2 #selectable_error_msg {
+.as_awesome_selector_template_2 #as_selectable_error_msg {
 color:red;
 }
-.awesome_selector_template_2 #header {
+.as_awesome_selector_template_2 #as_header {
 background:transparent url(/images/awesome_selector/table_header_bg1.png) no-repeat scroll 0 0;
 color:#FFFFFF;
 height:15px;
@@ -13,64 +13,64 @@ margin-top:10px;
 padding:10px;
 width:739px;
 }
-.awesome_selector_template_2 p {
+.as_awesome_selector_template_2 p {
 font-size:10px;
 line-height:14px;
 }
-.awesome_selector_template_2 #header p.title {
+.as_awesome_selector_template_2 #as_header p.as_title {
 color:#FFFFFF;
 font-weight:bold;
 }
-.awesome_selector_template_2 #header .bold {
+.as_awesome_selector_template_2 #as_header .as_bold {
 font-weight:bold;
 }
-.awesome_selector_template_2 #header #show_all{
+.as_awesome_selector_template_2 #as_header #as_show_all{
 cursor:pointer;
 font-size:10px;
 }
-.awesome_selector_template_2 #header #show_selection{
+.as_awesome_selector_template_2 #as_header #as_show_selection{
 margin-left:10px;
 cursor:pointer;
 font-size:10px;
 }
-.awesome_selector_template_2 #header .right {
+.as_awesome_selector_template_2 #as_header .as_right {
 float:right;
 margin-right: 15px;
 }
-.awesome_selector_template_2 #header .left {
+.as_awesome_selector_template_2 #as_header .as_left {
 float:left;
 }
-.awesome_selector_template_2 .selectable_list_bg {
+.as_awesome_selector_template_2 .as_selectable_list_bg {
 background:transparent url(/images/awesome_selector/table_list_bg1.png) repeat-y scroll 0 0;
 padding:5px;
 width:749px;
 }
-.awesome_selector_template_2 .selectable_list_bottom_bg {
+.as_awesome_selector_template_2 .as_selectable_list_bottom_bg {
 background:transparent url(/images/awesome_selector/table_list_bottom_bg1.png) no-repeat scroll 0 0;
 height:5px;
 margin-bottom:10px;
 width:759px;
 }
-.awesome_selector_template_2 #selection_cnt {
+.as_awesome_selector_template_2 #as_selection_cnt {
 background:transparent;
 color:#FFFFFF;
 float:right;
 margin-left:5px;
 }
-.awesome_selector_template_2 .selected a {
+.as_awesome_selector_template_2 .as_selected a {
 background:transparent;
 color:#FFFFFF;
 float:right;
 margin-left:10px;
 text-decoration:none;
 }
-.awesome_selector_template_2 .all a {
+.as_awesome_selector_template_2 .as_all a {
 background:transparent;
 color:#FFFFFF;
 float:right;
 text-decoration:none;
 }
-.awesome_selector_template_2 #selection_list_wrapper {
+.as_awesome_selector_template_2 #as_selection_list_wrapper {
 border-bottom:1px solid #D5D5D5;
 height:210px;
 list-style-image:none;
@@ -79,20 +79,20 @@ list-style-type:none;
 margin-bottom:10px;
 overflow:auto;
 }
-.awesome_selector_template_2 .selectable_element_details {
+.as_awesome_selector_template_2 .as_selectable_element_details {
 float:left;
 height:50px;
 margin:5px;
 padding:5px;
 width:163px;
 }
-.awesome_selector_template_2 .selectable_element_details img {
+.as_awesome_selector_template_2 .as_selectable_element_details img {
 float:left;
 height:50px;
 margin-right:5px;
 width:50px;
 }
-.awesome_selector_template_2 .selectable_element_details:hover {
+.as_awesome_selector_template_2 .as_selectable_element_details:hover {
 background:transparent url(/images/awesome_selector/add_bg1.png) no-repeat scroll 0 0;
 cursor:pointer;
 float:left;
@@ -101,7 +101,7 @@ margin:5px;
 padding:5px;
 width:163px;
 }
-.awesome_selector_template_2 .selectable_element_details.selected {
+.as_awesome_selector_template_2 .as_selectable_element_details.as_selected {
 background:transparent url(/images/awesome_selector/add_bg1.png) no-repeat scroll 0 0;
 float:left;
 height:50px;
@@ -110,7 +110,7 @@ padding:5px;
 width:163px;
 z-index:1000;
 }
-.awesome_selector_template_2 .selectable_element_details.selected:hover {
+.as_awesome_selector_template_2 .as_selectable_element_details.as_selected:hover {
 background:transparent url(/images/awesome_selector/remove_bg1.png) no-repeat scroll 0 0;
 float:left;
 height:50px;
@@ -118,7 +118,7 @@ margin:5px;
 padding:5px;
 width:163px;
 }
-.awesome_selector_template_2 input[type='text'] {
+.as_awesome_selector_template_2 input[type='text'] {
 color:#7F7F7F;
 font-size:12px;
 border:1px solid #D5D5D5;
@@ -126,7 +126,7 @@ padding:1px;
 width: 177px;
 }
 
-.awesome_selector_template_2 input[type='submit'] {
+.as_awesome_selector_template_2 input[type='submit'] {
 color:#7F7F7F;
 font-size:12px;
 border:1px solid #D5D5D5;
