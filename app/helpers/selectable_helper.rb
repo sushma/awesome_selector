@@ -1,11 +1,11 @@
 module SelectableHelper
 
-  URL_ERROR_MESSAGE = "<font color='red'>Please provide post url as 'form_post_url' parameter to post the form after selection. </font>"
-  FIELD_ERROR_MESSAGE = "<font color='red'>Please provide atleast one field as 'field_names' parameter for the list to be displayed. </font>"
-  FIELD_ARRAY_ERROR_MESSAGE = "<font color='red'>Please provide an array of field_names.</font>"
-  OBJECT_ARRAY_ERROR_MESSAGE = "<font color='red'>Please provide an array of objects.</font>"
-  SELECTED_ARRAY_ERROR_MESSAGE = "<font color='red'>Please provide an array of selected objects.</font>"
-  SELECTION_LIMIT_ERROR_MESSAGE = "<font color='red'>Please provide an array of 'integer value as maximum selection limit' and a 'string as error message' eg :max_selection_limit => [5, 'Sorry, you can not select more users.'].</font>"
+  URL_ERROR_MESSAGE = "<font color='red'>Please provide post url as 'form_post_url' parameter to post the form after selection.</font>"
+  FIELD_ERROR_MESSAGE = "<font color='red'>Please provide atleast one field as 'field_names' parameter for the list to be displayed.</font>"
+  FIELD_ARRAY_ERROR_MESSAGE = "<font color='red'>Please provide an array of field names for 'field_names' parameter.</font>"
+  OBJECT_ARRAY_ERROR_MESSAGE = "<font color='red'>Please provide an array of objects for 'objects' parameter.</font>"
+  SELECTED_ARRAY_ERROR_MESSAGE = "<font color='red'>Please provide an array of selected objects for 'selected_objects' parameter.</font>"
+  SELECTION_LIMIT_ERROR_MESSAGE = "<font color='red'>Please provide an array of 'integer value as maximum selection limit' and a 'string as error message' for 'max_selection_limit' parameter. eg :max_selection_limit => [5, 'Sorry, you can not select more users.']</font>"
 
   def awesome_selector(options = {})
     return OBJECT_ARRAY_ERROR_MESSAGE if (options[:objects].blank? || options[:objects].class.to_s != "Array")

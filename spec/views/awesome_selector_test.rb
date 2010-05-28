@@ -29,12 +29,12 @@ describe "Should display errors if mandatory parameters are not passed " do
 
   it "should display error if object is not passed" do
     response_text = awesome_selector :field_names => ["name","color"]
-    response_text.should have_tag('font', /Please provide an array of objects./)
+    response_text.should have_tag('font', /Please provide an array of objects for 'objects' parameter./)
   end
 
   it "should display error if blank object is passed" do
     response_text = awesome_selector :field_names => ["name","color"], :object =>  []
-    response_text.should have_tag('font', /Please provide an array of objects./)
+    response_text.should have_tag('font', /Please provide an array of objects for 'objects' parameter./)
   end
 
   it "should display error if field_names are not passed" do
@@ -53,7 +53,7 @@ describe "Should not display errors if mandatory parameters are passed" do
 
   it "should not display error if object is passed" do
     response_text = awesome_selector :objects => create_object
-    response_text.should_not have_tag('font', /Please provide an array of objects./)
+    response_text.should_not have_tag('font', /Please provide an array of objects for 'objects' parameter./)
   end
 
   it "should not display error if field_names are passed" do
@@ -76,18 +76,18 @@ describe "Should display errors if optional parameters are passed in wrong forma
   it "should display error if selected_objects passed as parameter is not an array" do
     selected_objects = {:selected_objects => ''}
     response_text = awesome_selector create_hash_with_mandetory_params.merge(selected_objects)
-    response_text.should have_tag('font', /Please provide an array of selected objects./)
+    response_text.should have_tag('font', /Please provide an array of selected objects for 'selected_objects' parameter./)
   end
   
   it "should display error if field_names passed as parameter is not an array" do
     response_text =awesome_selector :objects => create_object, :field_names => "name"
-    response_text.should have_tag('font', /Please provide an array of field_names./)
+    response_text.should have_tag('font', /Please provide an array of field names for 'field_names' parameter./)
   end
   
   it "should display error if max_selection_limit passed as parameter is not an array" do
     parameter_hash = {:selected_objects => [], :max_selection_limit => ''}
     response_text = awesome_selector create_hash_with_mandetory_params.merge(parameter_hash)
-    response_text.should have_tag('font', "Please provide an array of 'integer value as maximum selection limit' and a 'string as error message' eg :max_selection_limit => [5, 'Sorry, you can not select more users.'].")
+    response_text.should have_tag('font', "Please provide an array of 'integer value as maximum selection limit' and a 'string as error message' for 'max_selection_limit' parameter. eg :max_selection_limit => [5, 'Sorry, you can not select more users.']")
   end
   
 end
@@ -97,18 +97,18 @@ describe "Should not display errors if optional parameters are passed in right f
   it "should not display error if selected_objects passed as parameter is an array" do
     selected_objects = {:selected_objects => []}
     response_text = awesome_selector create_hash_with_mandetory_params.merge(selected_objects)
-    response_text.should_not have_tag('font', /Please provide an array of selected objects./)
+    response_text.should_not have_tag('font', /Please provide an array of selected objects for 'selected_objects' parameter./)
   end
 
   it "should not display error if field_names passed as parameter is an array" do
     response_text =awesome_selector :objects => create_object, :field_names => ["name"]
-    response_text.should_not have_tag('font', /Please provide an array of field_names./)
+    response_text.should_not have_tag('font', /Please provide an array of field names for 'field_names' parameter./)
   end
 
   it "should not display error if max_selection_limit passed as parameter is an array" do
     parameter_hash = {:selected_objects => [], :max_selection_limit => [1]}
     response_text = awesome_selector create_hash_with_mandetory_params.merge(parameter_hash)
-    response_text.should_not have_tag('font', "Please provide an array of 'integer value as maximum selection limit' and a 'string as error message' eg :max_selection_limit => [5, 'Sorry, you can not select more users.'].")
+    response_text.should_not have_tag('font', "Please provide an array of 'integer value as maximum selection limit' and a 'string as error message' for 'max_selection_limit' parameter. eg :max_selection_limit => [5, 'Sorry, you can not select more users.']")
   end
 
 end
