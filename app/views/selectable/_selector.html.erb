@@ -30,3 +30,15 @@
       <% end %>
       </div>
 </div>
+
+<!--Script to highlight selected list elements on load-->
+<script type="text/javascript">
+selection_cnt = "<%= selected_objects.length %>"
+if(selection_cnt > 0)
+{
+ <% for obj in selected_objects %>
+   jQuery("#selectable_element_div_" + <%= obj %>).addClass('selected');
+ <% end %>
+ jQuery('#selection_cnt').html("(" + selection_cnt + ")");
+}
+</script>

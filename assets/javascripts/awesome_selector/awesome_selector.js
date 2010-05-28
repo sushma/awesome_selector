@@ -65,11 +65,19 @@ jQuery(document).ready(function(){
   /*js to collect selected ids*/
   jQuery("#awesome_selector_form").submit(function(){
     var ids = new Array;
+    var selection_limit;
     jQuery("ul#selection_list_wrapper li.selected").each(function(){
       ids.push(jQuery(this).attr('record_id'));
+      selection_limit = jQuery(this).attr('selection_limit');
     });
     if(ids.length > 0)
     {
+      var limit = eval(selection_limit);
+      if ((limit != "unlimited") && (ids.length > limit[0]))
+        {
+         alert(limit[1]);
+         return false;
+        }
       jQuery('#selected_element_ids').val(ids.join());
       return true;
     }
@@ -80,7 +88,6 @@ jQuery(document).ready(function(){
     }
   });
 });
-
 
 /*method to reset filter textbox and filter result*/
 function reset_list_filter()
