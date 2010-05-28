@@ -28,6 +28,7 @@ Optional parameters
 
 :template                  ->  Name of template to be used. Default is 'template_1'.(template name is case sensitive)
                                Example of available templates are available at 'examples/example.html' of the 'plugins/awesome_selector' folder.
+:selected_objects          ->  Accepts an array of objects to be displayed as already selected in the form.
 :auto_complete_field_name  ->  Accepts single field name as string argument for autocomplete text box.
 :image_url                 ->  Accepts an instance method to display image for each object of the array.
 :max_selection_limit       ->  Accepts an array of 'an integer value as maximum selection limit' and a 'string as error message' to be displayed if selection exceeds the limit.
@@ -35,6 +36,7 @@ Optional parameters
 == Example ==
 
 <%=  awesome_selector  :objects => @users,
+                       :selected_objects => @selected_users,
                        :field_names => ["name","email"],
                        :form_post_url => users_path,
                        :template => "template_1",
