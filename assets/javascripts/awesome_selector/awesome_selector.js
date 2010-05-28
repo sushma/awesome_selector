@@ -6,7 +6,7 @@ jQuery(document).ready(function(){
 
   /*js for text_box clear btn*/
   jQuery("#as_filter_clear_btn").click(function(){
-    reset_list_filter();
+    as_reset_list_filter();
   });
 
   /*js for autocomplete*/
@@ -36,7 +36,7 @@ jQuery(document).ready(function(){
     jQuery(this).click(function(){
       obj = jQuery(this);
       selection_limit = jQuery(this).attr('selection_limit');
-      highlight_selected_div(obj, selection_limit);
+      as_highlight_selected_div(obj, selection_limit);
     });
   });
 
@@ -47,7 +47,7 @@ jQuery(document).ready(function(){
     jQuery('#as_show_selection').removeClass('as_bold');
     jQuery('#as_selection_cnt').removeClass('as_bold');
     list_wrapper.removeClass('as_selected_elements_list');
-    reset_list_filter();
+    as_reset_list_filter();
   });
 
 
@@ -59,7 +59,7 @@ jQuery(document).ready(function(){
     list_wrapper.children("li:not('.as_selected')").hide();
     list_wrapper.children("li.as_selected").show();
     list_wrapper.addClass('as_selected_elements_list');
-    reset_list_filter();
+    as_reset_list_filter();
   });
 
   /*js to collect selected ids*/
@@ -90,21 +90,21 @@ jQuery(document).ready(function(){
 });
 
 /*method to reset filter textbox and filter result*/
-function reset_list_filter()
+function as_reset_list_filter()
 {
   jQuery("#as_awesome_selector_list_filter").val('');
   jQuery("#as_awesome_selector_list_filter").keyup();
 }
 
 /*method to display error message*/
-function display_error(obj, msg)
+function as_display_error(obj, msg)
 {
   if(jQuery('#as_err_'+ obj).length == 0)
     jQuery('<div id="as_err_' + obj + '" >'+ msg +'</div>').appendTo(jQuery('#as_selectable_error_msg'));
 }
 
 /*method to selected or deselect list item*/
-function highlight_selected_div(element, max_selection_limit)
+function as_highlight_selected_div(element, max_selection_limit)
 {
   if(!(element.hasClass('as_selected')))
   {

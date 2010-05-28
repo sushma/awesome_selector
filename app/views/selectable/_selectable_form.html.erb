@@ -7,7 +7,7 @@
       <% rescue %>
         <script type="text/javascript">
           jQuery(document).ready(function(){
-            display_error("<%= field_name %>", "Error: Field not found '<%= field_name %>'.");
+            as_display_error("<%= field_name %>", "Error: Field not found '<%= field_name %>'.");
           });
         </script>
       <% end %>
