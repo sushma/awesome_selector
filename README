@@ -36,7 +36,7 @@ Optional parameters
 
 <%=  awesome_selector  :objects => @users,
                        :field_names => ["name","email"],
-                       :form_post_url => users_path
+                       :form_post_url => users_path,
                        :template => "template_1",
                        :auto_complete_field_name => "name",
                        :image_url => "avatar_photo_url(:thumb)",
