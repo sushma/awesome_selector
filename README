@@ -33,6 +33,7 @@ Optional parameters
 :image_url                 ->  Accepts an instance method to display image for each object of the array.
 :max_selection_limit       ->  Accepts an array of 'an integer value as maximum selection limit' and a 'string as error message' to be displayed if selection exceeds the limit.
 
+
 == Example ==
 
 <%=  awesome_selector  :objects => @users,
