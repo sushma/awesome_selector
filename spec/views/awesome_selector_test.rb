@@ -64,7 +64,7 @@ describe "Should not display errors if mandatory parameters are passed" do
   it "should not display error if form post url is passed" do
     response_text = awesome_selector create_hash_with_mandetory_params
     response_text.should_not have_tag('font', /Please provide post url as 'form_post_url' parameter to post the form after selection./)
-    response_text.should have_tag('div#awesome_selector', :count => 1)
+    response_text.should have_tag('div#as_awesome_selector', :count => 1)
   end
 
 end
@@ -120,25 +120,25 @@ describe "Should create form elements based on parameters " do
 
   it "should apply 'template_1' as default" do
     awesome_selector create_hash_with_mandetory_params
-    response.should have_tag('div#awesome_selector.awesome_selector_template_1', :count => 1)
+    response.should have_tag('div#as_awesome_selector.as_awesome_selector_template_1', :count => 1)
   end
 
   it "should apply template if template is provided" do
     awesome_selector create_hash_with_mandetory_params.merge(:template => 'template_2')
-    response.should_not have_tag('div#awesome_selector.awesome_selector_template_1')
-    response.should have_tag('div#awesome_selector.awesome_selector_template_2', :count => 1)
+    response.should_not have_tag('div#as_awesome_selector.as_awesome_selector_template_1')
+    response.should have_tag('div#as_awesome_selector.as_awesome_selector_template_2', :count => 1)
   end
 
   it "Should create filter textbox and link to clear text" do
     awesome_selector create_hash_with_mandetory_params
-    response.should have_tag('input#awesome_selector_list_filter[type=text]', :count => 1)
-    response.should have_tag("a#filter_clear_btn", :count => 1)
+    response.should have_tag('input#as_awesome_selector_list_filter[type=text]', :count => 1)
+    response.should have_tag("a#as_filter_clear_btn", :count => 1)
   end
 
   it "should create links 'all' and 'selected'" do
     awesome_selector create_hash_with_mandetory_params
-    response.should have_tag("#header p#show_all.bold", :count => 1)
-    response.should have_tag("#header p#show_selection", :count => 1)
+    response.should have_tag("#as_header p#as_show_all.as_bold", :count => 1)
+    response.should have_tag("#as_header p#as_show_selection", :count => 1)
   end
 
   it "should create form with form_post_url as action" do
@@ -148,8 +148,8 @@ describe "Should create form elements based on parameters " do
 
   it "should create form with list element divs" do
     awesome_selector create_hash_with_mandetory_params
-    response.should have_tag('div#awesome_selector_main form ul#selection_list_wrapper', :count => 1)
-    response.should have_tag('ul#selection_list_wrapper li.selectable_element_details', :count => 5)
+    response.should have_tag('div#as_awesome_selector_main form ul#as_selection_list_wrapper', :count => 1)
+    response.should have_tag('ul#as_selection_list_wrapper li.as_selectable_element_details', :count => 5)
   end
 
   it "should show value of all the field names provided as parameter for each list element" do
@@ -158,31 +158,31 @@ describe "Should create form elements based on parameters " do
       cnt = i+1
       template = "template" + cnt.to_s
       color = "color" + cnt.to_s
-      response.should have_tag("ul li#selectable_element_div_#{cnt} p#details", /template/, :count => 1)
-      response.should have_tag("ul li#selectable_element_div_#{cnt} p#details br", :count => 2)
-      response.should have_tag("ul li#selectable_element_div_#{cnt} p#details", /color/, :count => 1)
+      response.should have_tag("ul li#as_selectable_element_div_#{cnt} p#as_details", /template/, :count => 1)
+      response.should have_tag("ul li#as_selectable_element_div_#{cnt} p#as_details br", :count => 2)
+      response.should have_tag("ul li#as_selectable_element_div_#{cnt} p#as_details", /color/, :count => 1)
     end
   end
 
   it "should not show the fields value, if not provided as parameter" do
     awesome_selector :objects => create_object, :field_names => ["name"], :form_post_url => 'awesome_selector_path'
     5.times do |i|
-      response.should have_tag("ul li#selectable_element_div_#{i+1} p#details", /template/, :count => 1)
-      response.should have_tag("ul li#selectable_element_div_#{i+1} p#details br", :count => 1)
+      response.should have_tag("ul li#as_selectable_element_div_#{i+1} p#as_details", /template/, :count => 1)
+      response.should have_tag("ul li#as_selectable_element_div_#{i+1} p#as_details br", :count => 1)
     end
   end
 
   it "should show image if image_url is provided" do
     awesome_selector create_hash_with_mandetory_params.merge(:image_url => "image_url")
     5.times do |i|
-      response.should have_tag("ul li#selectable_element_div_#{i+1} img[src='#{get_image_url}']", :count => 1)
+      response.should have_tag("ul li#as_selectable_element_div_#{i+1} img[src='#{get_image_url}']", :count => 1)
     end
   end
 
   it "should not show image if image_url is not provided" do
     awesome_selector create_hash_with_mandetory_params
     5.times do |i|
-      response.should_not have_tag("li#selectable_element_div_#{i+1} img[src='#{get_image_url}']")
+      response.should_not have_tag("li#as_selectable_element_div_#{i+1} img[src='#{get_image_url}']")
     end
   end
 
