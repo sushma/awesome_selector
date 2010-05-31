@@ -53,7 +53,7 @@ For template examples check out: http://sappsdreams.wordpress.com/2010/03/03/rub
 
 Create new template
 -----------------------
-A new template can be easily created by the following the steps below:
+A new template can be easily created by following steps below:
 
 Steps to create 'template_3'
 
@@ -62,6 +62,11 @@ Steps to create 'template_3'
 3. Replace all the class name 'awesome_selector_template_1' with 'awesome_selector_template_3'
 4. Load the css as: <%= stylesheet_link_tag 'awesome_selector/selector_template_3.css' %>
 5. Change the css as per your requirement for the new template.
+
+
+== Uninstall ==
+
+rake awesome_selector:uninstall
 
 
 == Support ==
