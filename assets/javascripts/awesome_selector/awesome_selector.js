@@ -78,7 +78,7 @@ jQuery(document).ready(function(){
          alert(limit[1]);
          return false;
         }
-      jQuery('#as_selected_element_ids').val(ids.join());
+      jQuery('#selected_element_ids').val(ids.join());
       return true;
     }
     else
