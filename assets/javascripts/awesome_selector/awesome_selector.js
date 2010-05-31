@@ -111,9 +111,9 @@ function as_highlight_selected_div(element, max_selection_limit)
     var selection_limit = eval(max_selection_limit);
     if ((selection_limit == "unlimited") || (parseInt(as_selection_cnt) < selection_limit[0]))
     {
-      element.addClass('selected');
+      element.addClass('as_selected');
       as_selection_cnt = parseInt(as_selection_cnt) + 1;
-      jQuery('#selection_cnt').html("(" + selection_cnt + ")");
+      jQuery('#as_selection_cnt').html("(" + as_selection_cnt + ")");
     }
     else
       alert(selection_limit[1] ? selection_limit[1] : "You can not select more");
@@ -121,9 +121,9 @@ function as_highlight_selected_div(element, max_selection_limit)
   else
   {
     as_selection_cnt = parseInt(as_selection_cnt) - 1;
-    jQuery('#selection_cnt').html("(" + selection_cnt + ")");
-    element.removeClass('selected');
-    if(jQuery('ul#selection_list_wrapper').hasClass('selected_elements_list'))
+    jQuery('#as_selection_cnt').html("(" + as_selection_cnt + ")");
+    element.removeClass('as_selected');
+    if(jQuery('ul#as_selection_list_wrapper').hasClass('as_selected_elements_list'))
     {
       element.hide();
     }
