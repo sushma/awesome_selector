@@ -48,6 +48,7 @@ Optional parameters
 
 When this form is submitted, the selected objects id are available as params[:selected_element_ids] joined by comma.
 
+
 For template examples check out: http://sappsdreams.wordpress.com/2010/03/03/ruby-on-rails-plugin-for-facebook-style-selector/
 
 Create new template
