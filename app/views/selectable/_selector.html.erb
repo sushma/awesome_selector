@@ -1,12 +1,16 @@
 <%= javascript_include_tag 'awesome_selector/jquery', 'awesome_selector/jquery.jfilter', 'awesome_selector/jquery.autocomplete', 'awesome_selector/awesome_selector' %>
 <%= stylesheet_link_tag 'awesome_selector/awesome_selector', 'awesome_selector/selector_template_1', 'awesome_selector/selector_template_2'%>
 
+<script type ="text/javascript">
+  AS.autocomplete_array = <%=  auto_complete.to_json %>;
+</script>
+
 <div id="as_awesome_selector" class="as_awesome_selector_<%=  template %>">
   <div id="as_selectable_error_msg"></div>
   <div class="clear"></div>
   <div id="as_filter_div">
     <%=  "Filter result: " %>
-    <input type = "text" id = "as_awesome_selector_list_filter" autocomplete_array = '<%=  auto_complete.to_json %>'>
+    <input type = "text" id = "as_awesome_selector_list_filter" />
     <a href="javascript: void(0);" id="as_filter_clear_btn" style="display:none;"></a>
   </div>
   <div id="as_header">

@@ -1,9 +1,9 @@
-
+var AS = {}
 var as_selection_cnt = 0;
 jQuery(document).ready(function(){
   var text_filter = jQuery('#as_awesome_selector_list_filter');
   var list_wrapper = jQuery('ul#as_selection_list_wrapper');
-
+  
   /*js for text_box clear btn*/
   jQuery("#as_filter_clear_btn").click(function(){
     as_reset_list_filter();
@@ -16,7 +16,7 @@ jQuery(document).ready(function(){
     //width:179,
     zIndex: 9999,
     deferRequestBy: 5, //miliseconds
-    lookup: eval(text_filter.attr('autocomplete_array'))//local lookup values
+    lookup: eval(AS.autocomplete_array)//local lookup values
   });
   //ac.disable();
   //ac.enable();
