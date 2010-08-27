@@ -13,9 +13,11 @@ namespace :awesome_selector do
     images_path = "#{Rails.root}/public/images/awesome_selector"
     javascripts_path = "#{Rails.root}/public/javascripts/awesome_selector"
     stylesheets_path = "#{Rails.root}/public/stylesheets/awesome_selector"
+    plugin_path = "#{Rails.root}/vendor/plugins/awesome_selector"
     FileUtils.rm_r images_path if File.directory?(images_path)
     FileUtils.rm_r javascripts_path if File.directory?(javascripts_path)
     FileUtils.rm_r stylesheets_path if File.directory?(stylesheets_path)
+    FileUtils.rm_r plugin_path if File.directory?(plugin_path)
   end
 
 end
